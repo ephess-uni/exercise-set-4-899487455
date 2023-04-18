@@ -1,4 +1,12 @@
-""" ex_4_0.py """
+
+
+
+# >>>> The code below will call your function and print the results
+if __name__ == "__main__":
+    print(f"{get_shutdown_events(FILENAME)=}")
+    
+    
+    """ ex_4_0.py """
 try:
     from src.util import get_data_file_path
 except ImportError:
@@ -10,18 +18,14 @@ FILENAME = get_data_file_path('messages.log')
 
 
 def get_shutdown_events(logfile):
-    shutdown_events = []
-    with open(logfile, "r") as file:
-        for line in file:
+    shutdown_lines = []
+    with open(logfile, "r") as f:
+        for line in f:
             if "Shutdown initiated" in line:
-                shutdown_events.append(line.strip())
-    return shutdown_events
-    """
-    Your docstring here.  Replace the pass keyword below with your implementation
-    """
-    pass
+                shutdown_lines.append(line.strip())
+    return shutdown_lines
 
 
 # >>>> The code below will call your function and print the results
-if __name__ == "__main__":
+if _name_ == "_main_":
     print(f"{get_shutdown_events(FILENAME)=}")
