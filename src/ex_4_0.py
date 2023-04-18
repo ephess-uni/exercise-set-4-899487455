@@ -1,10 +1,4 @@
 
-
-
-# >>>> The code below will call your function and print the results
-if __name__ == "__main__":
-    print(f"{get_shutdown_events(FILENAME)=}")
-    
     
     """ ex_4_0.py """
 try:
